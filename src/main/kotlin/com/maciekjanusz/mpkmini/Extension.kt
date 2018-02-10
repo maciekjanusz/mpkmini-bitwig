@@ -9,8 +9,9 @@ class Extension(definition: ControllerExtensionDefinition, host: ControllerHost)
     : ControllerExtension(definition, host) {
 
     lateinit var transport: Transport
-    internal val midiCallback = MidiCallback()
-    internal val sysexCallback = SysexCallback()
+
+    private val midiCallback = MidiCallback()
+    private val sysexCallback = SysexCallback()
 
     override fun init() {
         transport = host.createTransport()
